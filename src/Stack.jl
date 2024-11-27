@@ -1,16 +1,17 @@
-# throughout the code i am callign the stack a linked list. this is because a stack is exactly like a linked list.
+# throughout the code i am calling the stack a linked list. this is because a stack is exactly like a linked list.
 
 module Stack
 
-greet() = print("Hello World, this is the actual stack folder/file")
 
-#creating astructure for what the nodes should look like
+# greet() = print("Hello World, this is the actual stack folder/file")
+
+#creating a structure for what the nodes should look like. Contains generic types. 
 struct Node{T}
 	data     :: T
 	nextNode :: Union{Node, Nothing}
 end
 
-#making a structure of what the linked list should be like. cna have a tail and head 
+#making a structure of what the linked list should be like. can have a tail and head. Tail is not used as much. 
 struct LinkedList
 	head:: Union{Node, Nothing}
 	tail :: Union{LinkedList, Nothing}
@@ -62,6 +63,7 @@ function isEmpty(x::LinkedList)
 	return isItEmpty
 end
 
+#recursively prints the data of the top node and then pops it. without changing the initial stack. 
 function printAllElements(x::LinkedList)
 	tempLinkedList = x
 
